@@ -1,0 +1,13 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: team-b-reconciler
+  namespace: team-b
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: team-b-reconciler
+subjects:
+  - kind: ServiceAccount
+    name: team-b-reconciler
+    namespace: team-b
