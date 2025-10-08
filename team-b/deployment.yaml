@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: team-b-app
+  namespace: team-b
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: team-b-app
+  template:
+    metadata:
+      labels:
+        app: team-b-app
+    spec:
+      containers:
+      - name: httpd
+        image: httpd:2.4
+        ports:
+        - containerPort: 80
