@@ -1,0 +1,15 @@
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: myapp-dev-semver
+  namespace: flux-system
+spec:
+  interval: 2m
+  path: ./apps/myapp/kustomize/overlays/dev
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: dstpflux-dev
+  wait: true
+  timeout: 5m

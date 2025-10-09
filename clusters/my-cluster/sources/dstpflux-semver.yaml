@@ -1,0 +1,21 @@
+---
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: GitRepository
+metadata:
+  name: dstpflux-semver
+  namespace: flux-system
+spec:
+  interval: 1m
+  url: https://github.com/Jackdstp/dstpflux
+  ref:
+    semver: "^1.0.0"
+  ignore: |
+    # exclude all
+    /*
+    # include only necessary directories
+    !/apps
+    !/platform
+    !/tenants
+    !/team-a
+    !/team-b
+    !/clusters
