@@ -13,5 +13,3 @@ spec:
     kind: GitRepository
     name: myapp-staging
   targetNamespace: staging
-  syncOptions:
-    - CreateNamespace=true

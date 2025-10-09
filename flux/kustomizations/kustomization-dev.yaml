@@ -11,5 +11,3 @@ spec:
     kind: GitRepository
     name: myapp-dev
   targetNamespace: dev
-  syncOptions:
-    - CreateNamespace=true
